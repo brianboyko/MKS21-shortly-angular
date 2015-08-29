@@ -2,7 +2,7 @@
   <input placeholder='filter' type='text'>
 </form>
 
-<div class="links">
+<div ng-repeat="link in data.links | filter:search | orderBy:'created_at'" class="links">
   <div class="link fx-fade-up fx-speed-400 fx-easing-strong">
     <img src="assets/redirect_icon.png">
 
@@ -17,8 +17,8 @@
 
       <div class="original">
         {{ link.url }}
-      </div><a href="http://localhost:8000/api/links/{{link.code]}">{{
-      link.base_url }}/{{link.code}}</a>
+      </div><a href="http://localhost:8000/api/links/{{link.code}}">{{
+      link.base_url }}/{{ link.code }}</a>
     </div>
   </div>
 </div>
